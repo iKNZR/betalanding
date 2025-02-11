@@ -1,0 +1,483 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+h3 {
+  font-size: rem;
+  margin-bottom: 1.25rem;
+  font-weight: lighter;
+  color: #a57cd8;
+}
+
+.container {
+  max-width: 90rem;
+  padding-inline: 1rem;
+  margin-inline: auto;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: white;
+  z-index: 1000;
+  transition: background-color 0.3s, padding 0.3s;
+  background: transparent;
+  padding: 1rem 0;
+}
+.header__contact-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.25rem 1rem 1.25rem;
+  transition: opacity 0.3s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.header__contact-info--left {
+  display: flex;
+  gap: 0.625rem;
+}
+.header__navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.9375rem 1.25rem;
+}
+.header__navbar-center {
+  display: flex;
+  gap: 1.25rem;
+}
+.header__navbar-center a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.05rem;
+  transition: color 0.3s;
+  gap: 0.625rem;
+}
+.header__navbar-center a:hover {
+  text-decoration: underline;
+}
+.header.scrolling {
+  background-color: white;
+  padding: 0.625rem 0;
+  color: #222;
+}
+.header.scrolling .header__contact-info {
+  display: none;
+}
+.header.scrolling a {
+  color: #222;
+}
+
+/* Botón de Reserva */
+.header__reserve-right--btn {
+  background-color: white;
+  color: #3f3f3f;
+  padding: 0.625rem 1.25rem;
+  border: solid 1px white;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.header__reserve-right--btn:hover {
+  background-color: transparent;
+  color: white;
+}
+.scrolling .header__reserve-right--btn {
+  background-color: #222;
+  border: solid 1px #222;
+  color: white;
+}
+.scrolling .header__reserve-right--btn:hover {
+  background-color: white;
+  color: #222;
+}
+
+/* SCROLL BEHAVIOR */
+.scrolling .header__contact-info {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scrolling .header__navbar-link {
+  color: white;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  /* Chevron Buttons */
+}
+.hero__slider {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.hero__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.hero__image.active {
+  opacity: 1;
+}
+.hero__image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.hero__content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: white;
+  max-width: 40%;
+  z-index: 2;
+}
+.hero__btn {
+  background-color: #ff6347;
+  color: white;
+  padding: 0.625rem 1.25rem;
+  border: none;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+}
+.hero__btn:hover {
+  background-color: #ff4500;
+}
+.hero__prev, .hero__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 0.625rem;
+  cursor: pointer;
+  font-size: 2rem;
+  z-index: 5;
+}
+.hero__prev {
+  left: 0.625rem;
+}
+.hero__next {
+  right: 0.625rem;
+}
+
+/* ABOUT SECTION */
+.about {
+  padding: 3.125rem 0;
+  background-color: white;
+}
+.about__content {
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+}
+.about__content-left {
+  flex: 1;
+}
+.about__content-left--image {
+  width: 35rem;
+  aspect-ratio: 0.75;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem;
+}
+.about__content-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about__content-right h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+  color: #7a7a7a;
+  font-weight: lighter;
+}
+.about__content-right h2 span {
+  font-style: italic;
+}
+.about__content-right p {
+  font-size: 1.125rem;
+  margin-bottom: 1.25rem;
+  color: #7a7a7a;
+}
+.about__content-right ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
+}
+.about__content-right ul li {
+  font-size: 1.125rem;
+  color: #7a7a7a;
+}
+.about__content-right button {
+  background-color: #222;
+  width: 10rem;
+  color: white;
+  padding: 1rem 1.25rem;
+  border: none;
+  border-radius: 1.25rem;
+  cursor: pointer;
+  border: 1px solid #222;
+}
+.about__content-right button:hover {
+  background-color: white;
+  color: #222;
+}
+
+/* SERVICES SECTION */
+.services {
+  display: flex;
+  position: relative;
+  color: white;
+  padding: 7rem 0 5rem 0;
+  overflow: hidden;
+}
+.services::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 99%;
+  height: 100%;
+  margin: 0 0.5rem;
+  border-radius: 1rem;
+  background-image: url("https://www.psicocentrofc.com//wp-content/uploads/2024/07/holding-hands-group-of-people-are-having-therapy-2023-11-29-16-57-51-utc-scaled-1.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.7);
+  z-index: -1;
+}
+.services h3 {
+  color: white;
+}
+.services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+  font-weight: lighter;
+}
+.services h2 span {
+  font-style: italic;
+}
+.services ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.15rem;
+  padding: 3rem 0;
+  width: 100%;
+}
+.services ul li {
+  font-size: 1.125rem;
+  flex: 1 1 calc(25% - 1.15rem);
+  display: flex;
+}
+.services__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(32, 26, 26, 0.7);
+  max-width: 20rem;
+  min-height: 27rem;
+  width: 100%;
+  color: white;
+  padding: 3rem 2.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 254, 250, 0.2705882353);
+  transition: transform 0.3s;
+  flex-grow: 1;
+}
+.services__card:hover {
+  transform: translateY(-0.625rem);
+  border: 1px solid rgba(255, 254, 250, 0.4862745098);
+}
+.services__card img {
+  width: 3rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  margin: 0.75rem 0 1.5rem 0;
+}
+.services__card--texts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex-grow: 1;
+}
+.services__card--texts h4 {
+  font-size: 1.8rem;
+  font-weight: lighter;
+}
+.services__card--texts p {
+  font-size: 1rem;
+  line-height: 1.85;
+  padding: 1rem 0 1.75rem 0;
+  font-weight: lighter;
+  flex-grow: 1;
+}
+.services__card a {
+  font-size: 0.9rem;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+.services__card a:hover {
+  background-color: white;
+  color: #222;
+}
+.services__btn {
+  display: flex;
+}
+.services__btn button {
+  margin: auto;
+  align-self: center;
+  background-color: white;
+  color: #222;
+  padding: 1rem 2rem;
+  border: 1px solid transparent;
+  border-radius: 1.5rem;
+  cursor: pointer;
+}
+.services__btn button:hover {
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+}
+
+/* STEPS */
+.steps {
+  padding: 3.125rem 0;
+  background-color: white;
+}
+.steps h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+  font-weight: lighter;
+  color: #7a7a7a;
+}
+.steps h2 span {
+  font-style: italic;
+}
+.steps__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 3rem 0;
+}
+.steps__content--inner {
+  display: flex;
+  gap: 5rem;
+}
+.steps__content--inner img {
+  width: 35rem;
+  aspect-ratio: 0.75;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem;
+}
+.steps__content--inner-texts ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 3rem 0;
+}
+.steps__content--inner-texts li {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(139, 139, 139, 0.7137254902);
+}
+.steps__content--inner-texts li h4 {
+  font-size: 1.6rem;
+  font-weight: lighter;
+  color: #222;
+  margin: 0.7rem 0;
+}
+.steps__content--inner-texts li p {
+  font-size: 1.1rem;
+  color: #7a7a7a;
+  line-height: 1.85;
+}
+.steps__content--inner-texts button {
+  background-color: #222;
+  width: 10rem;
+  color: white;
+  padding: 1rem 1.25rem;
+  border: none;
+  border-radius: 1.25rem;
+  cursor: pointer;
+  border: 1px solid #222;
+}
+.steps__content--inner-texts button:hover {
+  background-color: white;
+  color: #222;
+}
+
+/* Botón flotante de WhatsApp */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  background-color: #25D366;
+  color: white;
+  width: 3.125rem;
+  height: 3.125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  box-shadow: 0px 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .services ul li {
+    flex: 1 1 100%;
+  }
+  .services__card {
+    min-height: auto;
+  }
+}/*# sourceMappingURL=styles.css.map */
