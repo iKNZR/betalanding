@@ -510,6 +510,55 @@ h3{
 
 }
 
+/* STATS */
+$gradient-start: #75bde0;
+$gradient-end: #9b68c4;
+$text-color: #fff;
+
+.stats {
+    background: linear-gradient(to bottom, $gradient-start, $gradient-end);
+    color: $text-color;
+    padding: 3rem 0;
+    
+    &__inner{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        
+        &-stat {
+            flex: 1;
+            max-width: 300px;
+            padding: 20px;
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+            
+            &:last-child {
+            border-right: none;
+        }
+        
+        h3 {
+            color: white;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        
+        p {
+            font-size: 1em;
+            opacity: 0.8;
+            text-align: left;
+        }
+        
+        .number {
+            display: block;
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    }
+}
+}
+
 /* Botón flotante de WhatsApp */
 .whatsapp-btn {
     position: fixed;
