@@ -117,59 +117,60 @@ h2{
     align-items: center;
     gap: 1.5rem;
     position: relative;
-
+  
     &--link {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s;
+  
+      &:hover {
         color: white;
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        transition: color 0.3s;
-
-        &:hover {
-            color: white;
-        }
+      }
     }
-
+  
     &--dropdown {
-        position: relative;
-        border-radius: 1rem;
-        
-        &:hover .header__navbar-center--dropdown-content {
-            display: flex;
-            flex-direction: column;
-            margin-top: 1rem auto;
-            opacity: 1;
-            transform: translateY(0);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-    }
-    
-    &--dropdown-content {
-        padding: 0.5rem 0 0 1rem;
-        margin-top: 2rem;
-        display: none;
-        position: absolute;
-        background-color: white;
-        min-width: 10rem;
-        border-radius: 1rem;
-        border: 1px solid #a7a7a7;
-        z-index: 1;
-        opacity: 0;
-        transform: translateY(-10px);
+      position: relative;
+      border-radius: 1rem;
+  
+      &:hover .header__navbar-center--dropdown-content,
+      .header__navbar-center--dropdown-content:hover {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem auto;
+        opacity: 1;
+        transform: translateY(0);
         transition: opacity 0.8s ease, transform 0.8s ease;
-
-        a {
-            color: #222;
-            font-size: 0.85rem;
-            padding: 1rem;
-            text-decoration: none;
-            display: block;
-
-            &:hover {
-                color: #a57cd8;
-            }
-        }
+      }
     }
-}
+  
+    &--dropdown-content {
+      padding: 0.5rem 0 0 1rem;
+    //   margin-top: 1rem;
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 10rem;
+      border-radius: 1rem;
+      border: 1px solid #a7a7a7;
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+  
+      a {
+        color: #222;
+        font-size: 0.85rem;
+        padding: 1rem;
+        text-decoration: none;
+        display: block;
+  
+        &:hover {
+          color: #a57cd8;
+        }
+      }
+    }
+  }
 
 
 /* Botón de Reserva */

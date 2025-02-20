@@ -122,7 +122,8 @@ h2 span {
   position: relative;
   border-radius: 1rem;
 }
-.header__navbar-center--dropdown:hover .header__navbar-center--dropdown-content {
+.header__navbar-center--dropdown:hover .header__navbar-center--dropdown-content,
+.header__navbar-center--dropdown .header__navbar-center--dropdown-content:hover {
   display: flex;
   flex-direction: column;
   margin-top: 1rem auto;
@@ -132,7 +133,6 @@ h2 span {
 }
 .header__navbar-center--dropdown-content {
   padding: 0.5rem 0 0 1rem;
-  margin-top: 2rem;
   display: none;
   position: absolute;
   background-color: white;
